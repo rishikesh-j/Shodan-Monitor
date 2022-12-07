@@ -1,5 +1,1 @@
-shodan
-os
-fileinput
-json
-argparse
+shodan==1.28.0
