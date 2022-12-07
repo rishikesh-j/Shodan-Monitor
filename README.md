@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://github.com/rishikesh-j/Shodan-Monitor"><img src="url=https://i.ibb.co/jLnygSj/Screenshot-20221207-225734.png" alt="Shodan Monitor"></a>
+  <a href="https://github.com/rishikesh-j/Shodan-Monitor"><img src="https://i.ibb.co/qRTNkv2/Screenshot-20221207-225734.png" alt="Shodan Monitor"></a>
   <br>
   Shodan Monitor
   <br>
