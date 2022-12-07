@@ -27,6 +27,8 @@ git clone https://github.com/rishikesh-j/Shodan-Monitor.git
 cd Shodan-Monitor
 pip3 intsall -r requirements.txt
 python3 shodan_monitor.py -h
+
+Note: Add a working SHodan API key to the code.
 ```
 
 
