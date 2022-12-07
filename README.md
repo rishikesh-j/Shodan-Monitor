@@ -1,15 +1,12 @@
 <h1 align="center">
   <br>
-          <div id="ascii-gallery" class="ascii-default-style"></div>
-        <script type="text/javascript">
-             var ascii_text="Shodan Monitor";
-             var ascii_style="double";
-        </script>
-        <script type="text/javascript" src="https://textart.io/gadgets/ascii.figlet.js"></script>
+  <a href="https://github.com/rishikesh-j/Shodan-Monitor"><img src="url=https://i.ibb.co/jLnygSj/Screenshot-20221207-225734.png" alt="Shodan Monitor"></a>
   <br>
   Shodan Monitor
   <br>
 </h1>
+
+<h4 align="center">An Advanced Shodan Dorking Tool.</h4>
 
 
 XSStrike is a Cross Site Scripting detection suite equipped with four hand written parsers, an intelligent payload generator, a powerful fuzzing engine and an incredibly fast crawler.
