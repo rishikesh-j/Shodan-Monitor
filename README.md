@@ -20,7 +20,6 @@ This can also compare the new results obtained with the previous results(if exit
 - Shodan Dorking
 - Compare the Results
 
-<br />
 
 ### Installation
 ```
@@ -30,13 +29,11 @@ pip3 intsall requirments.txt
 python3 shodan_monitor.py -h
 ```
 
-<br />
 
 ### Gallery
 #### Help
 ![help](https://i.ibb.co/qRTsHPT/Screenshot-20221207-230915.png)
 
-<br />
 
 ### Contribution
 Ways to contribute
