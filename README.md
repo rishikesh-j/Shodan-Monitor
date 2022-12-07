@@ -28,7 +28,7 @@ cd Shodan-Monitor
 pip3 intsall -r requirements.txt
 python3 shodan_monitor.py -h
 
-Note: Add a working SHodan API key to the code.
+Note: Add a working Shodan API key to the code.
 ```
 
 
