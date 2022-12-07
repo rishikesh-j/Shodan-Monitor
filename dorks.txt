@@ -1,0 +1,3 @@
+SSL_Domain::ssl:"${target}"
+Org_Domain::org:"${target}"
+Hostname_Domain::hostname:"${target}"

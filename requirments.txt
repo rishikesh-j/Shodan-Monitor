@@ -1,0 +1,5 @@
+shodan
+os
+fileinput
+json
+argparse

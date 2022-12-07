@@ -1,0 +1,3 @@
+SSL_Domain::ssl:"oziva.in"
+Org_Domain::org:"oziva.in"
+Hostname_Domain::hostname:"oziva.in"
