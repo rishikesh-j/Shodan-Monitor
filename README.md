@@ -8,9 +8,7 @@
 
 <h4 align="center">An Advanced Shodan Dorking Tool.</h4>
 
-
-
-
+<br />
 
 Shodan Monitor is a fast and superior shodan dorking tool that have more than 40+ dorks.
 
