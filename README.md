@@ -14,10 +14,13 @@ Shodan Monitor is a fast and superior shodan dorking tool that have more than 40
 
 This can also compare the new results obtained with the previous results(if exits locally) to know if the application or organisation have added any new IP or Ports.
 
+<br />
+
 ### Main Features
 - Shodan Dorking
 - Compare the Results
 
+<br />
 
 ### Installation
 ```
@@ -27,9 +30,13 @@ pip3 intsall requirments.txt
 python3 shodan_monitor.py -h
 ```
 
+<br />
+
 ### Gallery
 #### Help
 ![help](https://i.ibb.co/qRTsHPT/Screenshot-20221207-230915.png)
+
+<br />
 
 ### Contribution
 Ways to contribute
