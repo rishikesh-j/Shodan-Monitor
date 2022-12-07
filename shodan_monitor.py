@@ -16,7 +16,7 @@ args = parser.parse_args()
 
 output_dir = args.output
 
-api = Shodan('YJEgDhxjhQgVa1795jdcut8CdxkPSU63') #Working shodan API key.
+api = Shodan('SHODAN_API_KEY') #Working shodan API key.
 
 print('\n')
 
