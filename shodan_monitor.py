@@ -18,7 +18,7 @@ output_dir = args.output
 
 api = Shodan('SHODAN_API_KEY') #Working shodan API key.
 
-print('\n')
+print('\nShodan Monitor\n')
 
 def searching_shodan():
 	for line in fileinput.FileInput(files = args.input):
@@ -35,15 +35,19 @@ def searching_shodan():
 		for line in fileinput.FileInput(files = "tmp.txt"):
 			name = line.split("::")[0]
 			dork = line.split("::")[1]
-			print(f'Dorking for {name}....')
+			shodan_count= api.count(dork)
+			print(f'Dorking for {name} = {shodan_count}')
 			shodan_search = api.search(dork)
 			result = json.dumps(shodan_search)
-			filename = output_dir+"/"+target+"/"+name+".json"
+			filename = f'{output_dir}/{target}/{name}.json'
 			os.makedirs(os.path.dirname(filename), exist_ok=True)
 			with open(filename, 'w') as final_results:
 				final_results.write(result)
 
-def json_file_ip_compare(old_file, new_file):
+def json_file_compare(old_file, new_file):
+	global seen_flag_ip
+	global seen_flag_port
+	
 	with open(old_file, 'r') as file1:
 		data_old = file1.readlines()
 		str_old = ""
@@ -57,35 +61,23 @@ def json_file_ip_compare(old_file, new_file):
 		result_new = json_new['matches']
 
 	for i in result_new:
-		seen_flag = 0
+		seen_flag_ip = 0
+		seen_flag_port = 0
 		for j in result_old:
 			if i['ip_str'] == j['ip_str']:
-				seen_flag = 1
-				break
-		if seen_flag == 0:
+				seen_flag_ip = 1
+				if i['port'] == j['port']:
+					seen_flag_port = 1
+					break
+		if seen_flag_ip == 0:
 			print(f"[{i['ip_str']}] is a new IP entry.\n")
-
-def json_file_port_compare(old_file, new_file):
-	with open(old_file, 'r') as file1:
-		data_old = file1.readlines()
-		str_old = ""
-		json_old = json.loads(str_old.join(data_old))
-		result_old = json_old['matches']
-
-	with open(new_file, 'r') as file2:
-		data_new = file2.readlines()
-		str_new = ""
-		json_new = json.loads(str_new.join(data_new))
-		result_new = json_new['matches']
-
-	for i in result_new:
-		seen_flag = 0
-		for j in result_old:
-			if i['port'] == j['port']:
-				seen_flag = 1
-				break
-		if seen_flag == 0:
+		if seen_flag_port == 0:
 			print(f"[{i['ip_str']}] has a new port [{i['port']}] open.\n")
+
+	if seen_flag_ip or seen_flag_port == 0:
+		os.remove(old_file)
+		os.rename(new_file,old_file)
+
 
 def comparing_shodan():
 	for line in fileinput.FileInput(files = args.input):
@@ -130,10 +122,9 @@ def comparing_shodan():
 		for line in fileinput.FileInput(files = "tmp.txt"):
 			name = line.split("::")[0]
 			print(f'Comparing for {name}....')
-			filename = output_dir+"/"+target+"/"+name+".json"
-			filename_new = output_dir+"/"+target+"/"+name+"_new.json"
-			json_file_ip_compare(filename_new, filename)
-			json_file_port_compare(filename_new, filename)
+			filename = f'{output_dir}/{target}/{name}.json'
+			filename_new = f'{output_dir}/{target}/{name}_new.json'
+			json_file_compare(filename, filename_new)
 
 	else:
 		print("You have no previous data")
@@ -145,5 +136,3 @@ if args.compare and args.input:
 	comparing_shodan()
 
 print('\n')
-
-
