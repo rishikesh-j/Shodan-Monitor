@@ -25,7 +25,7 @@ This can also compare the new results obtained with the previous results(if exit
 ```
 git clone https://github.com/rishikesh-j/Shodan-Monitor.git
 cd Shodan-Monitor
-pip3 intsall -r requirements.txt
+pip3 install -r requirments.txt
 python3 shodan_monitor.py -h
 
 Note: Add a working Shodan API key to the code.
