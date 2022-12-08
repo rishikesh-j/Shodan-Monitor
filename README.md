@@ -10,7 +10,7 @@
 
 <br />
 
-Shodan Monitor is a fast and superior shodan dorking tool that have more than 40+ dorks.
+Shodan Monitor is a fast and superior shodan dorking tool that have more than 180+ dorks.
 
 This can also compare the new results obtained with the previous results(if exits locally) to know if the application or organisation have added any new IP or Ports.
 
