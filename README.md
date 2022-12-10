@@ -31,6 +31,15 @@ python3 shodan_monitor.py -h
 Note: Add a working Shodan API key to the code.
 ```
 
+### Help
+```
+#Dorking
+python3 shodan_monitor.py -i target.txt
+
+#Dorking and Comparing
+python3 shodan_monitor.py -i target.txt -c
+
+```
 
 ### Gallery
 #### Help
