@@ -16,7 +16,7 @@ args = parser.parse_args()
 
 output_dir = args.output
 
-api = Shodan('SHODAN_API_KEY') #Working shodan API key.
+api = Shodan('YJEgDhxjhQgVa1795jdcut8CdxkPSU63') #Working shodan API key.
 
 print('\nShodan Monitor\n')
 
@@ -127,7 +127,8 @@ def comparing_shodan():
 			json_file_compare(filename, filename_new)
 
 	else:
-		print("You have no previous data")
+		print("You have no previous data. New data from shodan is being collected and saved in the output directory.\n")
+		searching_shodan()
 
 if args.input and not args.compare:
 	searching_shodan()
@@ -136,3 +137,5 @@ if args.compare and args.input:
 	comparing_shodan()
 
 print('\n')
+
+
