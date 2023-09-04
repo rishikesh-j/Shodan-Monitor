@@ -17,7 +17,7 @@ args = parser.parse_args()
 
 output_dir = args.output
 
-SHODAN_API_KEY = "bOxKW52uy3KBdtbC886r4sRDlqzDXgH1"
+SHODAN_API_KEY = "FUv3uGO8W16DSNCBHZwvO3eLs5GzrYC7"
 
 api = shodan.Shodan(SHODAN_API_KEY)
 
@@ -84,7 +84,7 @@ def json_file_compare(old_file, new_file):
 
 def comparing_shodan():
 	for line in fileinput.FileInput(files = args.input):
-		target = line
+		target = line.strip()
 		replace = "${target}" #Replace part in dork file.
 
 		with open(r'dorks.txt', 'r') as file: #dorks.txt is the file which has all dorks.
@@ -102,7 +102,7 @@ def comparing_shodan():
 	exist = os.path.exists(filename)
 	if exist:
 		for line in fileinput.FileInput(files = args.input):
-			target = line
+			target = line.strip()
 			replace = "${target}" #Replace part in dork file.
 
 			with open(r'dorks.txt', 'r') as file: #dorks.txt is the file which has all dorks.
