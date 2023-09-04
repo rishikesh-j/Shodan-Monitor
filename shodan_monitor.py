@@ -16,13 +16,15 @@ args = parser.parse_args()
 
 output_dir = args.output
 
-api = Shodan('YJEgDhxjhQgVa1795jdcut8CdxkPSU63') #Working shodan API key.
+SHODAN_API_KEY = "bOxKW52uy3KBdtbC886r4sRDlqzDXgH1"
+
+api = shodan.Shodan(SHODAN_API_KEY)
 
 print('\nShodan Monitor\n')
 
 def searching_shodan():
-	for line in fileinput.FileInput(files = args.input):
-		target = line
+        for line in fileinput.FileInput(files = args.input):
+                target = line.strip()
 		replace = "${target}" #Replace part in dork file.
 
 		with open(r'dorks.txt', 'r') as file: #dorks.txt is the file which has all dorks.
