@@ -24,7 +24,7 @@ print('\nShodan Monitor\n')
 
 def searching_shodan():
         for line in fileinput.FileInput(files = args.input):
-                target = line.strip()
+		target = line.strip()
 		replace = "${target}" #Replace part in dork file.
 
 		with open(r'dorks.txt', 'r') as file: #dorks.txt is the file which has all dorks.
