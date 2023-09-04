@@ -1,4 +1,5 @@
 from shodan import Shodan
+import shodan
 import os
 import fileinput
 import json
@@ -23,7 +24,7 @@ api = shodan.Shodan(SHODAN_API_KEY)
 print('\nShodan Monitor\n')
 
 def searching_shodan():
-        for line in fileinput.FileInput(files = args.input):
+	for line in fileinput.FileInput(files = args.input):
 		target = line.strip()
 		replace = "${target}" #Replace part in dork file.
 
